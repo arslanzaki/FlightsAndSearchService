@@ -6,6 +6,7 @@ class CityRepository {
       const city = await City.create({ name });
       return city;
     } catch (error) {
+      console.log("Something Went Wront In The Repository Layer");
       throw { error };
     }
   }
@@ -17,11 +18,36 @@ class CityRepository {
           id: cityId,
         },
       });
+      return true;
     } catch (error) {
+      console.log("Something Went Wront In The Repository Layer");
+      throw { error };
+    }
+  }
+
+  async getCity(cityId) {
+    try {
+      const city = await City.findByPk(cityId);
+      return city;
+    } catch (error) {
+      console.log("Something Went Wront In The Repository Layer");
+      throw { error };
+    }
+  }
+
+  async updateCity(cityId, data) {
+    try {
+      const city = await City.update(data, {
+        where: {
+          id: cityId,
+        },
+      });
+      return city;
+    } catch (error) {
+      console.log("Something Went Wront In The Repository Layer");
       throw { error };
     }
   }
 }
-
 
 module.exports = CityRepository;
