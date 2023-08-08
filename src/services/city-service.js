@@ -10,7 +10,7 @@ class CityService {
       const city = await this.cityRepository.createCity(data);
       return city;
     } catch (error) {
-      console.log("Something Went Wront At Service Layer");
+      console.log("Something Went Wront At City-Service Layer");
       throw { error };
     }
   }

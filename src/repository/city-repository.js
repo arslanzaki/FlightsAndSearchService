@@ -7,7 +7,7 @@ class CityRepository {
       const city = await City.create({ name });
       return city;
     } catch (error) {
-      console.log("Something Went Wront In The Repository Layer");
+      console.log("Something Went Wront In The City-Repository Layer");
       throw { error };
     }
   }
